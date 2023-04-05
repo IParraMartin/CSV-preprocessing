@@ -24,7 +24,7 @@ class Cleaner:
 
 
 
-    def file_cleaner(files, del_column=None):
+    def file_cleaner(self, files, del_column=None):
 
         n = 0
 
@@ -50,7 +50,7 @@ class Cleaner:
             df.to_csv('set-tweets-' + str(n) + '.csv', index=False)
 
 
-    def file_merger(file_list):
+    def file_merger(self, file_list):
 
         df = pd.DataFrame()
 
@@ -61,3 +61,7 @@ class Cleaner:
         
         df.to_csv('merged.csv')
 
+
+merger = Cleaner()
+files = []
+data = merger.file_merger(files)
